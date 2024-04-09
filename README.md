@@ -11,6 +11,8 @@ Maybe start with an Ubuntu and then go on from there.
 - IcingaDB
 - Director (maybe?)
 
+It should be one Single Node environment that monitors itself.
+
 Maybe in the end there could be further topics, that can be linked.
 Like link to the docs of "How to add a check" and the like.
 
