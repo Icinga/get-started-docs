@@ -155,7 +155,7 @@ After installing Icinga 2, setting up a Redis® server and enabling the `icingad
 
 The Icinga DB daemon package is also included in the Icinga repository, and since it is already set up, you have completed the instructions here and can proceed to install the Icinga DB daemon on Ubuntu, which will also guide you through the setup of the database and Icinga DB Web.
 
-Open next step to [install Icinga DB daemon](02-icingadb.md)
+**Open next step to [install Icinga DB daemon](02-icingadb.md)**
 
 ## Backup
 

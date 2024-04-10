@@ -40,11 +40,11 @@ After creating the database, import the Icinga DB schema using the following com
 mysql -u root -p icingadb </usr/share/icingadb/schema/mysql/schema.sql
 ```
 
+## Configuring Icinga DB
 
 !!! info 
 
-    ## Configuring Icinga DB
-    Icinga DB installs its configuration file to /etc/icingadb/config.yml, pre-populating most of the settings for a local setup. Before running Icinga DB, adjust the Redis® and database credentials and, if necessary, the connection configuration. The configuration file explains general settings. All available settings can be found under Configuration.
+    Icinga DB installs its configuration file to `/etc/icingadb/config.yml`, pre-populating most of the settings for a local setup. Before running Icinga DB, adjust the Redis® and database credentials and, if necessary, the connection configuration.
 
 
 ## Running Icinga DB
@@ -56,3 +56,5 @@ systemctl enable --now icingadb
 
 ## Installing Icinga DB Web
 With Icinga 2, Redis®, Icinga DB and the database fully set up, it is now time to install Icinga DB Web, which connects to both Redis® and the database to display and work with the monitoring data.
+
+**Open next step to [install Icinga Web](03-icingaweb.md)**

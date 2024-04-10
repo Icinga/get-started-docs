@@ -1,15 +1,5 @@
 # Icinga Web 2 on Ubuntu
 
-!!! info
-    ## Installation Requirements 
-    - Icinga 2 and Icinga DB to monitor your infrastructure
-    - A web server, e.g. Apache or Nginx
-    - PHP version ≥ 7.2
-
-    ### Optional Requirements¶
-    - The pdfexport module (≥0.10) is required for the export to PDF
-    - LDAP PHP library when using Active Directory or LDAP for authentication
-
 ## Install Icinga Web 2
 You can install Icinga Web 2 by using your distribution’s package manager to install the icingaweb2 package. The additional package icingacli is necessary to follow further steps in this guide.
 
@@ -20,7 +10,12 @@ apt-get install icingaweb2 libapache2-mod-php icingacli
 The additional package `libapache2-mod-php` is necessary on Ubuntu to automatically install a web server and PHP and make Icinga Web 2 work out-of-the-box.
 
 ## Install the Web Server
-Ensure that you have a web server with PHP installed before proceeding, such as Apache or Nginx with PHP version ≥ 7.2. Depending on your operating system, you may need to install and configure the web server separately. An Apache configuration file to serve Icinga Web is already installed. If you want to use Nginx, you must manually create a configuration file using the following command. Save the output as a new file in the web server configuration directory:
+
+!!! info
+
+    Ensure that you have a web server with PHP installed before proceeding, such as Apache or Nginx with PHP version ≥ 7.2.
+
+An Apache configuration file to serve Icinga Web is already installed. If you want to use Nginx, you must manually create a configuration file using the following command. Save the output as a new file in the web server configuration directory:
 
 ```bash
 icingacli setup config webserver nginx --document-root /usr/share/icingaweb2/public
@@ -62,8 +57,4 @@ Finally visit Icinga Web 2 in your browser to access the setup wizard and comple
 
 The setup wizard automatically detects the required packages. In case one of them is missing, e.g. a PHP module, please install the package, restart your webserver and reload the setup page.
 
-
-
-
-
-
+**Open next step to [install Icinga DB Web](04-icingadbweb.md)**
