@@ -1,0 +1,22 @@
+site_name: MkLorum
+site_url: https://example.com/
+nav:
+  - Start Here: index.md
+  - Icinga 2: 01-icinga2.md
+  - Icinga DB: 02-icingadb.md
+  - Icinga Web: 03-icingaweb.md
+  - Icinga DB Web: 04-icingadbweb.md
+  - Director: 05-director.md
+
+theme:
+  name: material
+  locale: en
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true

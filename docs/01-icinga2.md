@@ -1,3 +1,8 @@
+=== "1"
+    Test
+
+=== "2"
+    Test 2
 # Install Icinga 2 on Ubuntu
 
 ## Add Icinga Package Repository
