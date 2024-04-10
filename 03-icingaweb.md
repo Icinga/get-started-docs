@@ -10,27 +10,6 @@
     - The pdfexport module (≥0.10) is required for the export to PDF
     - LDAP PHP library when using Active Directory or LDAP for authentication
 
-## Add Icinga Package Repository 
-
-You need to add the Icinga repository to your package management configuration for installing Icinga Web 2. If you’ve already configured your OS to use the Icinga repository for installing Icinga 2, you may skip this step.
-
-### Ubuntu Repository
-
-```bash 
-apt-get update
-apt-get -y install apt-transport-https wget gnupg
-
-wget -O - https://packages.icinga.com/icinga.key | apt-key add -
-
-. /etc/os-release; if [ ! -z ${UBUNTU_CODENAME+x} ]; then DIST="${UBUNTU_CODENAME}"; else DIST="$(lsb_release -c| awk '{print $2}')"; fi; \
- echo "deb https://packages.icinga.com/ubuntu icinga-${DIST} main" > \
- /etc/apt/sources.list.d/${DIST}-icinga.list
- echo "deb-src https://packages.icinga.com/ubuntu icinga-${DIST} main" >> \
- /etc/apt/sources.list.d/${DIST}-icinga.list
-
-apt-get update
-```
-
 ## Install Icinga Web 2
 You can install Icinga Web 2 by using your distribution’s package manager to install the icingaweb2 package. The additional package icingacli is necessary to follow further steps in this guide.
 

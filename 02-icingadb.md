@@ -1,27 +1,5 @@
 # Icinga DB
 
-## Adding Icinga Package Repository
-
-The recommended way to install Icinga DB is to use prebuilt packages from our official release repository.
-
-Here’s how to add the official release repository:
-
-```bash
-apt update
-apt -y install apt-transport-https wget gnupg
-
-wget -O - https://packages.icinga.com/icinga.key | apt-key add -
-
-. /etc/os-release; if [ ! -z ${UBUNTU_CODENAME+x} ]; then DIST="${UBUNTU_CODENAME}"; else DIST="$(lsb_release -c| awk '{print $2}')"; fi; \
- echo "deb https://packages.icinga.com/ubuntu icinga-${DIST} main" > \
- /etc/apt/sources.list.d/${DIST}-icinga.list
- echo "deb-src https://packages.icinga.com/ubuntu icinga-${DIST} main" >> \
- /etc/apt/sources.list.d/${DIST}-icinga.list
-
-apt update
-```
-
-
 ## Installing Icinga DB Package
 Use your distribution’s package manager to install the icingadb package as follows:
 
