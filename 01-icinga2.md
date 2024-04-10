@@ -112,19 +112,19 @@ The `icingadb-redis` package automatically installs the necessary systemd unit f
 systemctl enable --now icingadb-redis
 ```
 
-<<<<<<< Updated upstream
-#### Enable Remote Redis® Connections
-=======
-!!! Warn
+!!! Warning
 
     If  the following error occurs: 
     "Failed to enable unit: Refusing to operate on alias name or linked unit file: icingadb-redis.service"
-    check the status with : systectl status icingadb-redis
+    check the status with: 
+    
+    ```bash
+    systectl status icingadb-redis
+    ```
 
 
 
 #### Enable Remote Redis Connections
->>>>>>> Stashed changes
 
 By default, `icingadb-redis` only listens on `127.0.0.1`. If Icinga Web or Icinga 2 is running on another node, remote access to the Redis® server must be allowed. This requires the following directives to be set in the `/etc/icingadb-redis/icingadb-redis.conf` configuration file:
 
