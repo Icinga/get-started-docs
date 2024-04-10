@@ -24,6 +24,10 @@ A MySQL (≥5.5), MariaDB (≥10.1), or PostgreSQL (≥9.6) database is required
     innodb_large_prefix=1
     ```
 ### Set up a MySQL database for Icinga DB:
+Install MySQL 
+```bash
+apt install mysql-server
+```
 
 ```bash
 # mysql -u root -p
