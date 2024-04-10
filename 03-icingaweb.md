@@ -12,17 +12,10 @@ The additional package `libapache2-mod-php` is necessary on Ubuntu to automatica
 ## Install the Web Server
 
 !!! info
-<<<<<<< Updated upstream
 
     Ensure that you have a web server with PHP installed before proceeding, such as Apache or Nginx with PHP version ≥ 7.2.
 
 An Apache configuration file to serve Icinga Web is already installed. If you want to use Nginx, you must manually create a configuration file using the following command. Save the output as a new file in the web server configuration directory:
-=======
-    ```bash
-    apt install apache2 php8.1
-    ```
-Ensure that you have a web server with PHP installed before proceeding, such as Apache or Nginx with PHP version ≥ 7.2. Depending on your operating system, you may need to install and configure the web server separately. An Apache configuration file to serve Icinga Web is already installed. If you want to use Nginx, you must manually create a configuration file using the following command. Save the output as a new file in the web server configuration directory:
->>>>>>> Stashed changes
 
 ```bash
 icingacli setup config webserver nginx --document-root /usr/share/icingaweb2/public
@@ -70,14 +63,8 @@ Finally visit Icinga Web 2 in your browser to access the setup wizard and comple
 
 The setup wizard automatically detects the required packages. In case one of them is missing, e.g. a PHP module, please install the package, restart your webserver and reload the setup page.
 
-<<<<<<< Updated upstream
-**Open next step to [install Icinga DB Web](04-icingadbweb.md)**
-=======
+
 !!! Info
-    The API-user and the password are written in the file `/etc/icinga2/conf.d/api-users.conf`
+    The API-user and it's password are written in the file `/etc/icinga2/conf.d/api-users.conf`
 
-
-
-
-
->>>>>>> Stashed changes
+**Open next step to [install Icinga DB Web](04-icingadbweb.md)**
