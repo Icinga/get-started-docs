@@ -29,12 +29,12 @@ Install MySQL
 apt install mysql-server
 ```
 
-```bash
+```sql
 # mysql -u root -p
 
-CREATE DATABASE icingadb;
-CREATE USER 'icingadb'@'localhost' IDENTIFIED BY 'CHANGEME';
-GRANT ALL ON icingadb.* TO 'icingadb'@'localhost';
+mysql> CREATE DATABASE icingadb;
+mysql> CREATE USER 'icingadb'@'localhost' IDENTIFIED BY 'CHANGEME';
+mysql> GRANT ALL ON icingadb.* TO 'icingadb'@'localhost';
 ```
 
 After creating the database, import the Icinga DB schema using the following command:

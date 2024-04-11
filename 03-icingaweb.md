@@ -36,16 +36,12 @@ icingacli setup token show
 
 You need to manually create a database and a database user prior to starting the web wizard. This is due to local security restrictions whereas the web wizard cannot create a database/user through a local unix domain socket.
 
-```bash
-MariaDB [mysql]> CREATE DATABASE icingaweb2;
+```sql
+# mysql -u root -p
 
-MariaDB [mysql]> GRANT ALL ON icingaweb2.* TO icingaweb2@localhost IDENTIFIED BY `CHANGEME`;
-```
-oder 
-
-```bash
-CREATE USER 'icingaweb2'@'localhost' IDENTIFIED BY 'CHANGEME';
-GRANT ALL PRIVILEGES ON icingaweb2.* TO 'icingaweb2'@'localhost';
+mysql> CREATE DATABASE icingaweb2;
+mysql> CREATE USER 'icingaweb2'@'localhost' IDENTIFIED BY 'CHANGEME';
+mysql> GRANT ALL PRIVILEGES ON icingaweb2.* TO 'icingaweb2'@'localhost';
 ```
 
 !!! tip
@@ -54,6 +50,17 @@ GRANT ALL PRIVILEGES ON icingaweb2.* TO 'icingaweb2'@'localhost';
 !!! note
     This is only required if you are using a local database as authentication type.
 
+Add the webserver user (`www-data` in case of Apache) to the `icingaweb2`-group
+
+```bash
+usermod -a -G icingaweb2 www-data
+```
+
+Restart the webserver
+
+```bash
+systemctl restart apache2
+```
 
 ## Start Web Setup
 Finally visit Icinga Web 2 in your browser to access the setup wizard and complete the installation: `/icingaweb2/setup`.

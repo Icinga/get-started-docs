@@ -12,10 +12,12 @@ apt install icinga-director
 !!! Warn
     Warning Make sure to replace CHANGEME with a secure password.
 
-```bash
-mysql -e "CREATE DATABASE director CHARACTER SET 'utf8';
-  CREATE USER director@localhost IDENTIFIED BY 'CHANGEME';
-  GRANT ALL ON director.* TO director@localhost;"
+```sql
+# mysql -u root -p 
+
+mysql> CREATE DATABASE director CHARACTER SET 'utf8';
+mysql> CREATE USER director@localhost IDENTIFIED BY 'CHANGEME';
+mysql> GRANT ALL ON director.* TO director@localhost;
 ```
 
 ## Configuring Icinga Director

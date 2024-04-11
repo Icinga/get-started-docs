@@ -115,12 +115,14 @@ systemctl enable --now icingadb-redis
 !!! Warning
 
     If  the following error occurs: 
-    "Failed to enable unit: Refusing to operate on alias name or linked unit file: icingadb-redis.service"
-    check the status with: 
+    *"Failed to enable unit: Refusing to operate on alias name or linked unit file: icingadb-redis.service"*
+    Check the service's status with: 
     
     ```bash
-    systectl status icingadb-redis
+    systemctl status icingadb-redis
     ```
+
+    If it's already running, everything is okay.
 
 
 
