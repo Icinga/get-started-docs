@@ -1,4 +1,4 @@
-# Icinga DB on Ubuntu
+# Icinga DB on Debian
 
 ## Installing Icinga DB Package
 Use your distribution’s package manager to install the icingadb package as follows:
@@ -6,7 +6,6 @@ Use your distribution’s package manager to install the icingadb package as fol
 ```bash
 apt install icingadb
 ```
-
 
 ## Setting up the Database
 
