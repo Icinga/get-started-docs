@@ -13,6 +13,8 @@ nav:
 theme:
   name: material
   locale: en
+  features:
+  - content.tabs.link
 
 plugins:
   - include-markdown
