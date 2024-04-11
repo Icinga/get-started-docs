@@ -1,4 +1,4 @@
-# Installing Icinga Director on Ubuntu
+# Installing Icinga Director on Debian
 ## Installing the Package
 
 Use your distribution’s package manager to install the icinga-director package as follows:
