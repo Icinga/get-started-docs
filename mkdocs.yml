@@ -1,5 +1,7 @@
 site_name: MkLorum
 site_url: https://example.com/
+docs_dir: doc
+
 nav:
   - Start Here: index.md
   - Icinga 2: 01-icinga2.md

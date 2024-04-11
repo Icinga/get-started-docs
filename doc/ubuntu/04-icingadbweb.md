@@ -10,4 +10,4 @@ apt install icingadb-web
 
 This concludes the installation. Now proceed with the configuration.
 
-**Open next step to [show follow-ups](05-followups.md)**
+**Open next step to [install Icinga Director](05-director.md)**

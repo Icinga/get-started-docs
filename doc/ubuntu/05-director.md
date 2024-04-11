@@ -26,3 +26,5 @@ Log in to your running Icinga Web setup with a privileged user and follow the st
 1. Create a new resource for the Icinga Director database via the Configuration → Application → Resources menu. Please make sure that you configure utf8 as encoding.
 
 2. Select Icinga Director directly from the main menu and you will be taken to the kickstart wizard. Follow the instructions and you are done!
+
+**Open next step to [show follow-ups](../06-followups.md)**
