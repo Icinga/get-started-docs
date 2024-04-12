@@ -14,6 +14,7 @@
 
     ```bash
     zypper install mysql-server
+    systemctl enable mysql --now
     ```
 
 === "RHEL"

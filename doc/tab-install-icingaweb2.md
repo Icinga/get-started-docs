@@ -16,6 +16,9 @@
 
     ```bash
     zypper install icingaweb2 icingacli
+    systemctl enable --now apache2
+    a2enmod rewrite
+    systemctl restart apache2
     ```
 
 === "RHEL"

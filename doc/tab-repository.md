@@ -49,7 +49,7 @@
 === "SLES"
 
     !!! Info
-        A paid repository subscription is required for SLES repositories. Get more information on icinga.com/subscription
+        A paid repository subscription is required for SLES repositories. Get more information on [icinga.com/subscription](https://icinga.com/subscription)
 
         Don’t forget to fill in the username and password section with your credentials in the local .repo file.
 
@@ -58,23 +58,23 @@
     ```bash
     rpm --import https://packages.icinga.com/icinga.key
 
-    zypper ar https://packages.icinga.com/subscription/sles/ICINGA-release.repo
+    wget https://packages.icinga.com/subscription/sles/ICINGA-release.repo -O /etc/zypp/repos.d/ICINGA-release.repo
     zypper ref
     ```
 
     You need to additionally add the PackageHub repository to fulfill dependencies:
 
-
     ```bash
     source /etc/os-release
 
     SUSEConnect -p PackageHub/$VERSION_ID/x86_64
+    SUSEConnect -p sle-module-web-scripting/$VERSION_ID/x86_64
     ```
 
 === "RHEL"
 
     !!! Info
-        A paid repository subscription is required for RHEL repositories. Get more information on icinga.com/subscription
+        A paid repository subscription is required for RHEL repositories. Get more information on [icinga.com/subscription](https://icinga.com/subscription)
 
         Don’t forget to fill in the username and password section with your credentials in the local .repo file.
 

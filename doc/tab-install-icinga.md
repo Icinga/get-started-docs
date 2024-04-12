@@ -13,7 +13,7 @@
 === "SLES"
 
     ```bash
-    zypper install icinga2 
+    zypper install icinga2
     zypper install --recommends monitoring-plugins-all
     ```
 
