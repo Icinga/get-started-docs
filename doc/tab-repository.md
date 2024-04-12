@@ -73,6 +73,9 @@
 
 === "RHEL"
 
+    At first, do you really need Selinux? Just disable it! But dont try in production!
+    `setenforce 0`
+
     !!! Info
         A paid repository subscription is required for RHEL repositories. Get more information on [icinga.com/subscription](https://icinga.com/subscription)
 
@@ -80,7 +83,7 @@
 
     ```bash
     rpm --import https://packages.icinga.com/icinga.key
-    wget https://packages.icinga.com/subscription/rhel/ICINGA-release.repo -O /etc/yum.repos.d/ICINGA-release.repo
+    curl https://packages.icinga.com/subscription/rhel/ICINGA-release.repo -o /etc/yum.repos.d/ICINGA-release.repo
     ```
 
     If you are using RHEL you need to additionally enable the codeready-builder repository before installing the EPEL rpm package.

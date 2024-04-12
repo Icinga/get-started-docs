@@ -23,11 +23,15 @@
 
         ```bash
         dnf install mysql-server
+        systemctl start mysqld.service
+        systemctl enable mysqld.service
         ```
 
     === "RHEL 7"
 
         ```bash
         yum install mysql-server
+        systemctl start mysqld.service
+        systemctl enable mysqld.service
         ```
         

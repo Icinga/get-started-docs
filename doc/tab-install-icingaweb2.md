@@ -22,6 +22,9 @@
     ```
 
 === "RHEL"
+    ```bash
+    systemctl enable --now httpd
+    ```
 
     === "RHEL 8 or Later"
 
