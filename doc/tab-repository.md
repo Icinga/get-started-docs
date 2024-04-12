@@ -64,6 +64,7 @@
 
     You need to additionally add the PackageHub repository to fulfill dependencies:
 
+
     ```bash
     source /etc/os-release
 
@@ -74,7 +75,19 @@
 === "RHEL"
 
     At first, do you really need Selinux? Just disable it! But dont try in production!
+    
     `setenforce 0`
+
+    or at least allow Redis® to connect
+    `setsebool -P httpd_can_network_connect 1`
+
+    and download following packages:
+
+    ```bash
+    dnf install icinga-selinux-common
+    dnf install icingaweb2-selinux
+    ```
+
 
     !!! Info
         A paid repository subscription is required for RHEL repositories. Get more information on [icinga.com/subscription](https://icinga.com/subscription)

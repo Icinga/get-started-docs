@@ -22,6 +22,10 @@
     ```
 
 === "RHEL"
+
+    !!! Warning
+        If you have SELinux enabled, the package `icingaweb2-selinux` is also required.
+
     ```bash
     systemctl enable --now httpd
     ```
