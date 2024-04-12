@@ -148,7 +148,7 @@ mysql> GRANT ALL PRIVILEGES ON icingaweb2.* TO 'icingaweb2'@'localhost';
 Add the webserver user (`www-data` in case of Apache) to the `icingaweb2`-group
 
 ```bash
-usermod -a -G icingaweb2 www-data   
+usermod -a -G icingaweb2 www-data
 systemctl restart apache2
 ```
 
@@ -182,7 +182,7 @@ This concludes the installation. Now proceed with the configuration.
 ### Set up MySQL Database
 
 ```sql
-# mysql -u root -p 
+# mysql -u root -p
 
 mysql> CREATE DATABASE director CHARACTER SET 'utf8';
 mysql> CREATE USER director@localhost IDENTIFIED BY 'CHANGEME';

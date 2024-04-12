@@ -7,7 +7,7 @@
 === "Debian"
 
     ```bash
-    apt install mysql-server
+    apt install mariadb-server
     ```
 
 === "SLES"
