@@ -1,5 +1,13 @@
 # Quickstart
 
+This is a simple and quick guide to try out Icinga 2 and is not intended as a production environment. It includes the following parts:
+
+- [Icinga 2](#install-icinga-2)
+- [Icinga DB](#install-icinga-db)
+- [Icinga Web](#install-icinga-web-2)
+- [Icinga DB Web](#install-icinga-db-web)
+- [Icinga Director](#install-icinga-director)
+
 ## Install Icinga 2
 
 **Add official Icinga Package Repository**
@@ -107,19 +115,9 @@ mysql -u root -p icingadb </usr/share/icingadb/schema/mysql/schema.sql
 systemctl enable --now icingadb
 ```
 
-## Icinga Web 2
-
-**Install Icinga Web 2**
+## Install Icinga Web 2
 
 {% include "tab-install-icingaweb2.md" %}
-
-**Install the Web Server**
-
-An Apache configuration file to serve Icinga Web is already installed. If you want to use Nginx, you must manually create a configuration file using the following command. Save the output as a new file in the web server configuration directory:
-
-```bash
-icingacli setup config webserver nginx --document-root /usr/share/icingaweb2/public
-```
 
 **Prepare Web Setup**
 
