@@ -3,7 +3,7 @@ site_url: https://example.com/
 docs_dir: doc
 
 nav:
-  - Quickstart: quickstart.md
+  - Quickstart: 00.quickstart.md
 
 theme:
   name: material
