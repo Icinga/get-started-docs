@@ -3,9 +3,10 @@ site_url: https://example.com/
 docs_dir: doc
 
 nav:
-  - Quickstart: 00.quickstart.md
-  - IcingaWeb Setup: websetup.md
-  - Director Setup: director.md
+  - Quickstart: 10-quickstart.md
+  - Icinga Web Setup: 11-websetup.md
+  - Director Setup: 12-director.md
+  - Follow Up: 13-follow-up.md
 
 theme:
   name: material

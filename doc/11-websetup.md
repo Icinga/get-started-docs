@@ -1,6 +1,15 @@
 # Web Setup Walktrough
 ### Steps of Web Setup
 
+
+
+Add the webserver user (`www-data` in case of Apache) to the `icingaweb2`-group
+
+```bash
+usermod -a -G icingaweb2 www-data
+systemctl restart apache2
+```
+
 **1. Welcome**
 
 Here is the output of the command `icingacli setup token show` requiered.
@@ -24,7 +33,7 @@ There should be all avaible, apart from 'PHP Module: Imagick', but that's expect
 
 **4.1 Authentication**
 
-Choose the Authentication Type : Database
+Choose the Authentication Type: Database
 
 ![Authentication-Type](img/web/03-authentication-type-database.png)
 
@@ -37,7 +46,7 @@ At this point is the 'icingaweb2' Database requiered:
 - Host: localhost
 - Database Name: icingaweb2
 - Username: icingaweb2
-- Password: CHANGEME
+- Password: *your password*
 
 !!! Info
     The Validation checks just the syntax.
@@ -86,7 +95,7 @@ Here is the Icnga DB Database requiered:
 
 ![Icinga-DB-Database](img/web/10-icinga-db-database.png
 )
-**5.2 Icinga DB Redis**
+**5.2 Redis® for Icinga DB**
 
 Set following field of the Primary Icinga Master is
 - Redis Host: localhost

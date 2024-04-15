@@ -1,4 +1,15 @@
 # Director Setup Walktrough
+
+
+## Configure Icinga Director
+
+Log in to your running Icinga Web setup with a privileged user and follow the steps below to configure Icinga Director:
+
+1. Create a new resource for the Icinga Director database via the Configuration → Application → Resources menu. Please make sure that you configure utf8 as encoding.
+
+2. Select Icinga Director directly from the main menu and you will be taken to the kickstart wizard. Follow the instructions and you are done!
+
+
 ![configuration](img/director/00-configuration.png)
 ![application-general](img/director/01-application-general.png)
 ![appllication-resources](img/director/02-appllication-resources.png)
