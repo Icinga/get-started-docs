@@ -74,19 +74,29 @@
 
 === "RHEL"
 
-    At first, do you really need Selinux? Just disable it! But dont try in production!
-    
-    `setenforce 0`
+    !!! Warning
 
-    or at least allow Redis® to connect
-    `setsebool -P httpd_can_network_connect 1`
+        At first, do you really need Selinux? Just disable it! But dont try in production!
+        
+        ```bash
+        setenforce 0
+        ```
 
-    and download following packages:
+        **If you need Selinux, at least allow Redis® to connect**
+        ```bash
+        setsebool -P httpd_can_network_connect 1
+        ```
 
-    ```bash
-    dnf install icinga-selinux-common
-    dnf install icingaweb2-selinux
-    ```
+        and download following packages:
+
+        === "RHEL 8 or Later"
+            ```bash
+            dnf install icinga-selinux-common icingaweb2-selinux icinga2-selinux
+            ```
+        === "RHEL 7"
+            ```bash
+            yum install icinga-selinux-common icingaweb2-selinux icinga2-selinux
+            ```
 
 
     !!! Info

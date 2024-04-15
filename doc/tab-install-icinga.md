@@ -19,9 +19,6 @@
 
 === "RHEL"
 
-    !!! Tip
-        If you have SELinux enabled, the package `icinga2-selinux` is also required.
-
     The packages for RHEL depend on other packages which are distributed as part of the EPEL repository.
 
     === "RHEL 8 or Later"
