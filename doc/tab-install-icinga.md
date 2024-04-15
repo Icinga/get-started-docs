@@ -1,19 +1,42 @@
 === "Ubuntu"
 
     ```bash
-    apt install icinga2 icingacli icingadb icingadb-redis icingadb-web icingaweb2 icinga-director monitoring-plugins 
+    apt install \
+        icinga2 \
+        icingacli \
+        icingadb \
+        icingadb-redis \
+        icingadb-web \
+        icingaweb2 \
+        icinga-director \
+        monitoring-plugins 
     ```
 
 === "Debian"
 
     ```bash
-    apt install icinga2 icingacli icingadb icingadb-redis icingadb-web icingaweb2 icinga-director monitoring-plugins
+    apt install \
+        icinga2 \
+        icingacli \
+        icingadb \
+        icingadb-redis \
+        icingadb-web \
+        icingaweb2 \
+        icinga-director \
+        monitoring-plugins
     ```
 
 === "SLES"
 
     ```bash
-    zypper install icinga2 icingacli icingadb icingadb-redis icingadb-web icingaweb2 icinga-director
+    zypper install \
+        icinga2 \
+        icingacli \
+        icingadb \
+        icingadb-redis \
+        icingadb-web \
+        icingaweb2 \
+        icinga-director
     zypper install --recommends monitoring-plugins-all
     ```
 
@@ -24,13 +47,29 @@
     === "RHEL 8 or Later"
 
         ```bash
-        dnf install icinga2 icingacli icingadb icingadb-redis icingadb-web icingaweb2 icinga-director nagios-plugins-all
+        dnf install \
+        icinga2 \
+        icingacli \
+        icingadb \
+        icingadb-redis \
+        icingadb-web \
+        icingaweb2 \
+        icinga-director \
+        nagios-plugins-all
         systemctl enable --now icinga2
         ```
 
     === "RHEL 7"
 
         ```bash
-        yum install icinga2 icingacli icingadb icingadb-redis icingadb-web icingaweb2 icinga-director nagios-plugins-all
+        yum install \
+        icinga2 \
+        icingacli \
+        icingadb \
+        icingadb-redis \
+        icingadb-web \
+        icingaweb2 \
+        icinga-director \
+        nagios-plugins-all
         systemctl enable --now icinga2
         ```
