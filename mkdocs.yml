@@ -4,6 +4,8 @@ docs_dir: doc
 
 nav:
   - Quickstart: 00.quickstart.md
+  - IcingaWeb Setup: websetup.md
+  - Director Setup: director.md
 
 theme:
   name: material
