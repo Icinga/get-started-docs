@@ -37,6 +37,7 @@
         icingadb-web \
         icingaweb2 \
         icinga-director
+        
     zypper install --recommends monitoring-plugins-all
     ```
 
@@ -48,14 +49,15 @@
 
         ```bash
         dnf install \
-        icinga2 \
-        icingacli \
-        icingadb \
-        icingadb-redis \
-        icingadb-web \
-        icingaweb2 \
-        icinga-director \
-        nagios-plugins-all
+            icinga2 \
+            icingacli \
+            icingadb \
+            icingadb-redis \
+            icingadb-web \
+            icingaweb2 \
+            icinga-director \
+            nagios-plugins-all
+
         systemctl enable --now icinga2
         ```
 
@@ -63,13 +65,14 @@
 
         ```bash
         yum install \
-        icinga2 \
-        icingacli \
-        icingadb \
-        icingadb-redis \
-        icingadb-web \
-        icingaweb2 \
-        icinga-director \
-        nagios-plugins-all
+            icinga2 \
+            icingacli \
+            icingadb \
+            icingadb-redis \
+            icingadb-web \
+            icingaweb2 \
+            icinga-director \
+            nagios-plugins-all
+
         systemctl enable --now icinga2
         ```
