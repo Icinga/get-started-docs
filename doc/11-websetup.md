@@ -12,19 +12,19 @@ systemctl restart apache2
 
 **1. Welcome**
 
-Here is the output of the command `icingacli setup token show` requiered.
+The output of the command `icingacli setup token show` is required here.
 
 ![Welcome](img/web/00-welcome-to-webconfiguration.png)
 
 **2. Modules**
 
-If you already installed the Director you can choose it, no other changes are needed.
+If you already have installed the Icinga Director you can choose it, no other changes are needed.
 
 ![Modules](img/web/01-choose-modules.png)
 
 **3. Requirements**
 
-There should be all avaible, apart from 'PHP Module: Imagick', but that's expected.
+All should be avaible, apart from 'PHP Module: Imagick', but that's expected.
 
 ![Requirements](img/web/02-requirements.png)
 
@@ -33,35 +33,37 @@ There should be all avaible, apart from 'PHP Module: Imagick', but that's expect
 
 **4.1 Authentication**
 
-Choose the Authentication Type: Database
+Choose the Authentication Type: 'Database'
 
 ![Authentication-Type](img/web/03-authentication-type-database.png)
 
-**4.1 Database Resource**
+**4.2 Database Resource**
 
-At this point is the 'icingaweb2' Database requiered:
+At this point the Icinga Web 2 Database is required:
 
-- Resource Name: icingaweb_db
-- Database Type: MySQL
-- Host: localhost
-- Database Name: icingaweb2
-- Username: icingaweb2
-- Password: *your password*
+- Resource Name: 'icingaweb_db'
+- Database Type: 'MySQL'
+- Host: 'localhost'
+- Database Name: 'icingaweb2'
+- Username: 'icingaweb2'
+- Password: *YOUR PASSWORD*
 
 !!! Info
-    The Validation checks just the syntax.
+    The validation checks just the syntax.
 
 ![Database-Ressource-Icinga-Web](img/web/04-icinga-web-database.png)
 
-**4.2 Authentication Backend**
+**4.3 Authentication Backend**
 
-- Backend Name: icingaweb2
+- Backend Name: 'icingaweb2'
 
 ![Authentication-Backend](img/web/05-authentication-backend.png)
 
-**4.3 Aministration**
+**4.4 Aministration**
 
-Create a administrative account, this is also your login for icingaweb, f.e. :
+Create a administrative account, this is also your login for icingaweb:
+
+e.g.
 
 - Username: icingaadmin
 - Passowrd: icingaweb
@@ -69,13 +71,13 @@ Create a administrative account, this is also your login for icingaweb, f.e. :
 
 ![Create-Admin](img/web/06-create-admin-account.png)
 
-**4.4 Application Configuration**
+**4.5 Application Configuration**
 
-The defaults don't need to be change.
+The defaults don't need to be changed.
 
 ![Application-Configuration](img/web/07-application-configuration.png)
 
-**4.5 Check Configurations**
+**4.6 Check Configurations**
 
 ![Overview](img/web/08-configurration-overview.png)
 
@@ -87,11 +89,11 @@ The defaults don't need to be change.
 
 Here is the Icnga DB Database requiered:
 
-- Database Type: MySQL 
-- Host: localhost
-- Database Name: icingadb
-- Username: icingadb
-- Password: CHANGEME
+- Database Type: 'MySQL'
+- Host: 'localhost'
+- Database Name: 'icingadb'
+- Username: 'icingadb'
+- Password: *YOUR PASSWORD*
 
 ![Icinga-DB-Database](img/web/10-icinga-db-database.png
 )
@@ -106,12 +108,12 @@ Set following field of the Primary Icinga Master is
 
 **5.3 Icinga 2 API**
 
-The credentials of the API-user are in the file `/etc/icinga2/conf.d/api-users.conf`
+The credentials of the API-user are stored in `/etc/icinga2/conf.d/api-users.conf`
 
-- Host: localhost
-- Port: 5665
-- API Username: root
-- API Password: [password in the file]
+- Host: 'localhost'
+- Port: '5665'
+- API Username: 'root'
+- API Password: *PASSWORD FROM FILE*
 
 ![Icinga-API-Configuration](img/web/13-icinga-api-configuration.png)
 
