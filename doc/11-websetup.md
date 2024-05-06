@@ -99,28 +99,30 @@ Here is the Icnga DB Database requiered:
 )
 **5.2 Redis® for Icinga DB**
 
-Set following field of the Primary Icinga Master is
+Set following field of the Primary Icinga Master:
+ 
 - Redis Host: localhost
 
 ![Redis-Configuration](img/web/11-redis-configuration.png)
-![Redis-Validation](img/web/12-redis-validation.png)
-
 
 **5.3 Icinga 2 API**
 
-The credentials of the API-user are stored in `/etc/icinga2/conf.d/api-users.conf`
+The credentials of the API-user are stored in `/etc/icinga2/conf.d/api-users.conf`.
 
 - Host: 'localhost'
 - Port: '5665'
 - API Username: 'root'
 - API Password: *PASSWORD FROM FILE*
 
-![Icinga-API-Configuration](img/web/13-icinga-api-configuration.png)
+![Icinga-API-Configuration](img/web/12-icinga-api-configuration.png)
 
 **5.4 Check Configurations**
 
-![Overview](img/web/14-configuration-overview-2.png)
+If the credentials look good you can finish the setup.
+![Overview](img/web/13-configuration-overview-2.png)
 
-![Success-View](img/web/15-success-view.png)
-![Login](img/web/16-login-page.png)
-![Login-Filled](img/web/17-admin-login.png)
+If everything went well you will see following page.
+![Success-View](img/web/14-success-view.png)
+
+Try to log in to your administration account.
+![Login-Filled](img/web/15-admin-login.png)
