@@ -12,18 +12,22 @@ This is a simple and quick guide to try out Icinga 2 and is not intended as a pr
 
 The following commands must be executed with root permissions unless noted otherwise.
 
-### Add official Icinga Package Repository
+### Add Repository
+
+Add the official Icinga Package Repository to your System.
 
 {% include "include/tab-repository.md" %}
 
 ### Install Packages
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+Install all packages that you will need during the quickstart guide.
 
 {% include "include/tab-install-icinga.md" %}
 
 ### Set up API
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+
+Set up the Icinga API, as Icinga Web connects to it and Icinga DB requires it.
+
 ```bash
 icinga2 api setup
 systemctl restart icinga2
@@ -52,7 +56,9 @@ A MySQL database server is required.
     ```
 
 
-**Create databases**
+### Create databases
+
+Open mysql with the root user.
 
 ```bash
 mysql -u root -p
@@ -94,7 +100,9 @@ mysql -u root -p icingadb </usr/share/icingadb/schema/mysql/schema.sql
 
 ## Set up Icinga DB
 
-#### Run Redis® for Icinga DB
+### Run Redis® for Icinga DB
+
+Start and enable Redis® for Icinga DB.
 
 ```bash
 systemctl enable --now icingadb-redis
@@ -112,7 +120,9 @@ systemctl enable --now icingadb-redis
 
     If it's already running, everything is okay.
 
-#### Enable Icinga DB Feature
+### Enable Icinga DB Feature
+
+Enable the Icinga DB feature and make sure to restart Icinga 2.
 
 ```bash
 icinga2 feature enable icingadb
@@ -126,11 +136,15 @@ systemctl restart icinga2
 
     Icinga DB installs its configuration file to `/etc/icingadb/config.yml`, pre-populating most of the settings for a local setup. Before running Icinga DB, adjust the Redis® and database credentials and, if necessary, the connection configuration.
 
+Start Icinga DB by executing the following command.
+
 ```bash
 systemctl enable --now icingadb
 ```
 
 ## Set up Icinga Web 2
+
+Set up Icinga Web 2 to get the web GUI.
 
 {% include "include/tab-install-icingaweb2.md" %}
 
