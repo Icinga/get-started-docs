@@ -1,0 +1,27 @@
+site_name: MkLorum
+site_url: https://example.com/
+docs_dir: doc
+
+nav:
+  - Quickstart: 10-quickstart.md
+  - Icinga Web Setup: 11-websetup.md
+  - Director Setup: 12-director.md
+  - Follow Up: 13-follow-up.md
+
+theme:
+  name: material
+  locale: en
+  features:
+  - content.tabs.link
+
+plugins:
+  - include-markdown
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
