@@ -56,8 +56,6 @@
     First add the official repositories:
 
     ```bash
-    rpm --import https://packages.icinga.com/icinga.key
-
     wget https://packages.icinga.com/subscription/sles/ICINGA-release.repo -O /etc/zypp/repos.d/ICINGA-release.repo
     zypper ref
     ```
