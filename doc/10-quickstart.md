@@ -16,13 +16,13 @@ The following commands must be executed with root permissions unless noted other
 
 Add the official Icinga Package Repository to your System.
 
-{% include "include/tab-repository.md" %}
+{% include "doc/include/tab-repository.md" %}
 
 ### Install Packages
 
 Install all packages that you will need during the quickstart guide.
 
-{% include "include/tab-install-icinga.md" %}
+{% include "doc/include/tab-install-icinga.md" %}
 
 ### Set up API
 
@@ -146,7 +146,7 @@ systemctl enable --now icingadb
 
 Set up Icinga Web 2 to get the web GUI.
 
-{% include "include/tab-install-icingaweb2.md" %}
+{% include "doc/include/tab-install-icingaweb2.md" %}
 
 ### Prepare Web Setup
 
@@ -177,4 +177,4 @@ The setup wizard automatically detects the required packages. In case one of the
 !!! Info
     The API-user and it's password are written in the file `/etc/icinga2/conf.d/api-users.conf`
 
-### Continue with <u>**[Setup Wizard](websetup.md)**</u>
+### Continue with <u>**[Setup Wizard](11-websetup.md)**</u>
