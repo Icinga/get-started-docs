@@ -87,14 +87,9 @@
 
         and download following packages:
 
-        === "RHEL 8 or Later"
-            ```bash
-            dnf install icinga-selinux-common icingaweb2-selinux icinga2-selinux
-            ```
-        === "RHEL 7"
-            ```bash
-            yum install icinga-selinux-common icingaweb2-selinux icinga2-selinux
-            ```
+        ```bash
+        dnf install icinga-selinux-common icingaweb2-selinux icinga2-selinux
+        ```
 
 
     !!! Info
@@ -109,18 +104,11 @@
 
     If you are using RHEL you need to additionally enable the codeready-builder repository before installing the EPEL rpm package.
 
-    === "RHEL 8 or Later"
-        ```bash
-        ARCH=$(/bin/arch)
-        OSVER=$(. /etc/os-release; echo "${VERSION_ID%%.*}")
+    ```bash
+    ARCH=$(/bin/arch)
+    OSVER=$(. /etc/os-release; echo "${VERSION_ID%%.*}")
 
-        subscription-manager repos --enable "codeready-builder-for-rhel-${OSVER}-${ARCH}-rpms"
+    subscription-manager repos --enable "codeready-builder-for-rhel-${OSVER}-${ARCH}-rpms"
 
-        dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-${OSVER}.noarch.rpm
-        ```
-    === "RHEL 7"
-        ```bash
-        subscription-manager repos --enable rhel-7-server-optional-rpms
-
-        yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-        ```
+    dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-${OSVER}.noarch.rpm
+    ```

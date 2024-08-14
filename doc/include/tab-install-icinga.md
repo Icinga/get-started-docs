@@ -45,34 +45,16 @@
 
     The packages for RHEL depend on other packages which are distributed as part of the EPEL repository.
 
-    === "RHEL 8 or Later"
+    ```bash
+    dnf install \
+        icinga2 \
+        icingacli \
+        icingadb \
+        icingadb-redis \
+        icingadb-web \
+        icingaweb2 \
+        icinga-director \
+        nagios-plugins-all
 
-        ```bash
-        dnf install \
-            icinga2 \
-            icingacli \
-            icingadb \
-            icingadb-redis \
-            icingadb-web \
-            icingaweb2 \
-            icinga-director \
-            nagios-plugins-all
-
-        systemctl enable --now icinga2
-        ```
-
-    === "RHEL 7"
-
-        ```bash
-        yum install \
-            icinga2 \
-            icingacli \
-            icingadb \
-            icingadb-redis \
-            icingadb-web \
-            icingaweb2 \
-            icinga-director \
-            nagios-plugins-all
-
-        systemctl enable --now icinga2
-        ```
+    systemctl enable --now icinga2
+    ```
