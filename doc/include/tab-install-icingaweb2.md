@@ -4,7 +4,7 @@
     apt install libapache2-mod-php
     ```
 
-    The additional package `libapache2-mod-php` is necessary on Ubuntu to automatically install a web server and PHP and make Icinga Web 2 work out-of-the-box.
+    The additional package `libapache2-mod-php` is necessary on Ubuntu to automatically install a web server and PHP and make Icinga Web work out-of-the-box.
 
 === "Debian"
 
