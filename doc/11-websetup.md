@@ -1,45 +1,46 @@
-# Web Setup Walktrough
-### Steps of Web Setup
+# Icinga Web Setup Walkthrough
+
+This guide will walk you through the initial setup of Icinga Web.
 
 
+### 1. Welcome
 
-Add the webserver user (`www-data` in case of Apache) to the `icingaweb2`-group
+The first page will ask you for the setup token that you created before. This way, only authorized persons can use the setup wizard. Get the token with `icingacli setup token show`.
+
+Add the web server user (`www-data` in case of Apache) to the `icingaweb2`-group to allow the web server to access Icinga Web configuration files:
+
 
 ```bash
 usermod -a -G icingaweb2 www-data
 systemctl restart apache2
 ```
 
-**1. Welcome**
-
-The output of the command `icingacli setup token show` is required here.
-
 ![Welcome](img/web/00-welcome-to-webconfiguration.png)
 
-**2. Modules**
+### 2. Modules
 
-If you already have installed the Icinga Director you can choose it, no other changes are needed.
+Next, you can pick the Icinga Web modules to be enabled during the setup. If you followed the quickstart installation guide, Icinga Director is already installed and you can enable it.
 
 ![Modules](img/web/01-choose-modules.png)
 
-**3. Requirements**
+### 3. Requirements
 
-All should be avaible, apart from 'PHP Module: Imagick', but that's expected.
+Status colors indicate if all requirements are met. The yellow color indicates that an optional dependency is missing.
 
 ![Requirements](img/web/02-requirements.png)
 
-**4. Configuration**
+### 4. Configuration
 
 
-**4.1 Authentication**
+#### 4.1 Authentication
 
-Choose the Authentication Type: 'Database'
+By choosing the authentication type "Database", Icinga Web users will be stored in MySQL.
 
 ![Authentication-Type](img/web/03-authentication-type-database.png)
 
-**4.2 Database Resource**
+#### 4.2 Database Resource
 
-At this point the Icinga Web 2 Database is required:
+The setup wizard will now ask you for the details of the Icinga Web database which you created before:
 
 - Resource Name: 'icingaweb_db'
 - Database Type: 'MySQL'
@@ -48,46 +49,41 @@ At this point the Icinga Web 2 Database is required:
 - Username: 'icingaweb2'
 - Password: *YOUR PASSWORD*
 
-!!! Info
-    The validation checks just the syntax.
-
 ![Database-Ressource-Icinga-Web](img/web/04-icinga-web-database.png)
 
-**4.3 Authentication Backend**
+#### 4.3 Authentication Backend
 
-- Backend Name: 'icingaweb2'
+Icinga Web supports multiple authentication backends. To identify the backends, each one needs a unique name. We're gonna call this default authentication backend "icingaweb2".
 
 ![Authentication-Backend](img/web/05-authentication-backend.png)
 
-**4.4 Aministration**
+#### 4.4 Aministration
 
-Create a administrative account, this is also your login for icingaweb:
-
-e.g.
-
-- Username: icingaadmin
-- Passowrd: icingaweb
-- Repeat Passowrd: icingaweb
+Create an administrative account, this will be your initial user to access Icinga Web:
 
 ![Create-Admin](img/web/06-create-admin-account.png)
 
-**4.5 Application Configuration**
+#### 4.5 Application Configuration
 
-The defaults don't need to be changed.
+Mutliple configuration parameters are available to adjust the behaviour of logging, debugging and other things. The defaults are just right as for now.
 
 ![Application-Configuration](img/web/07-application-configuration.png)
 
-**4.6 Check Configurations**
+#### 4.6 Check Configurations
+
+The final page summarizes one more time all the configuration which were made.
 
 ![Overview](img/web/08-configurration-overview.png)
 
-**5. Configuration of Icinga DB Web**
+### 5. Configuration of Icinga DB Web
+
+Next, we configure the Icinga DB Web module. It is resposible for visualizing data that is stored in Icinga DB.
 
 ![Icinga-DB-Web-Configuration](img/web/09-icinga-db-web-configuration.png)
 
-**5.1 Icinga DB Resource**
+#### 5.1 Icinga DB Resource
 
-Here is the Icnga DB Database requiered:
+The setup wizard will now ask you for the details of the Icinga DB database which you created before:
 
 - Database Type: 'MySQL'
 - Host: 'localhost'
@@ -95,17 +91,15 @@ Here is the Icnga DB Database requiered:
 - Username: 'icingadb'
 - Password: *YOUR PASSWORD*
 
-![Icinga-DB-Database](img/web/10-icinga-db-database.png
-)
-**5.2 Redis® for Icinga DB**
+![Icinga-DB-Database](img/web/10-icinga-db-database.png)
 
-Set following field of the Primary Icinga Master:
- 
-- Redis Host: localhost
+#### 5.2 Redis® for Icinga DB
+
+Since Redis® is running on the same node as Icinga Web, we're setting `localhost` as Redis® Host.
 
 ![Redis-Configuration](img/web/11-redis-configuration.png)
 
-**5.3 Icinga 2 API**
+#### 5.3 Icinga 2 API
 
 The credentials of the API-user are stored in `/etc/icinga2/conf.d/api-users.conf`.
 
@@ -116,13 +110,16 @@ The credentials of the API-user are stored in `/etc/icinga2/conf.d/api-users.con
 
 ![Icinga-API-Configuration](img/web/12-icinga-api-configuration.png)
 
-**5.4 Check Configurations**
+#### 5.4 Check Configurations
 
-If the credentials look good you can finish the setup.
+The credentials are verified on the fly. If Icinga Web can access the API, you will see the following page that summarizes the configuration.
+
 ![Overview](img/web/13-configuration-overview-2.png)
 
-If everything went well you will see following page.
+One more final page summarizes if the configurations are all valid and working.
+
 ![Success-View](img/web/14-success-view.png)
 
-Try to log in to your administration account.
+Log in to Icinga Web with your administration account.
+
 ![Login-Filled](img/web/15-admin-login.png)

@@ -51,7 +51,7 @@
     !!! Info
         A paid repository subscription is required for SLES repositories. Get more information on [icinga.com/subscription](https://icinga.com/subscription)
 
-        Don’t forget to fill in the username and password section with your credentials in the local .repo file.
+        Don't forget to fill in the username and password section with your credentials in the local .repo file.
 
     First add the official repositories:
 
@@ -72,30 +72,10 @@
 
 === "RHEL"
 
-    !!! Warning
-
-        At first, do you really need Selinux? Just disable it! But dont try in production!
-        
-        ```bash
-        setenforce 0
-        ```
-
-        **If you need Selinux, at least allow Redis® to connect**
-        ```bash
-        setsebool -P httpd_can_network_connect 1
-        ```
-
-        and download following packages:
-
-        ```bash
-        dnf install icinga-selinux-common icingaweb2-selinux icinga2-selinux
-        ```
-
-
     !!! Info
         A paid repository subscription is required for RHEL repositories. Get more information on [icinga.com/subscription](https://icinga.com/subscription)
 
-        Don’t forget to fill in the username and password section with your credentials in the local .repo file.
+        Don't forget to fill in the username and password section with your credentials in the local .repo file.
 
     ```bash
     rpm --import https://packages.icinga.com/icinga.key

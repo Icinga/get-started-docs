@@ -58,3 +58,18 @@
 
     systemctl enable --now icinga2
     ```
+
+
+    !!! Warning
+
+        If SELinux is enabled on your server, you may have to allow connections from the web server to Redis® explicitly.
+
+        ```bash
+        setsebool -P httpd_can_network_connect 1
+        ```
+
+        and install additional packages to configure SELinux properly:
+
+        ```bash
+        dnf install icinga-selinux-common icingaweb2-selinux icinga2-selinux
+        ```

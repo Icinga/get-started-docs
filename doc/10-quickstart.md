@@ -1,6 +1,10 @@
 # Quickstart
 
-This is a simple and quick guide to try out Icinga 2 and is not intended as a production environment. It includes the following parts:
+Welcome to the Icinga Quickstart Guide! Whether you're new to system monitoring or an experienced admin, this guide will walk you through the essential steps to get Icinga up and running on your server. By the end of this guide, you'll be ready to monitor your network, servers, and applications, ensuring your infrastructure stays healthy and reliable.
+
+Icinga consists of multiple components, each responsible for different aspects of monitoring and management. To keep things simple, we'll be installing everything on a single node in this guide. This setup will give you a complete Icinga environment in one place, perfect for getting started quickly.
+
+### You're going to install:
 
 - Icinga 2
 - Icinga DB
@@ -8,72 +12,53 @@ This is a simple and quick guide to try out Icinga 2 and is not intended as a pr
 - Icinga DB Web
 - Icinga Director
 
-## Install Icinga
+### Requirements
 
-The following commands must be executed with root permissions unless noted otherwise.
+A database is required to store the monitoring data collected by Icinga. For this guide, MySQL > 5.7 or MariaDB > 10.2 is required.
 
-### Add Repository
+The commands listed below should be run with root permissions unless specified otherwise.
 
-Add the official Icinga Package Repository to your System.
+
+## Add Repository
+
+Add the official Icinga Package Repository to your system.
 
 {% include "doc/include/tab-repository.md" %}
 
-### Install Packages
-
-Install all packages that you will need during the quickstart guide.
+## Install Packages
 
 {% include "doc/include/tab-install-icinga.md" %}
 
-### Set up API
+## Set up API
 
-Set up the Icinga API, as Icinga Web connects to it and Icinga DB requires it.
+The Icinga 2 API is required by other components to transmit commands, read data and deploy new Icinga configuration. Set up the API by running the API wizard:
 
 ```bash
 icinga2 api setup
 systemctl restart icinga2
 ```
 
-!!! info
+The API setup wizard will guide you through the following steps:
 
-    This does:
+* It enables the `api` feature
+* It generates a Certification Authority (CA) and initial certificates, since Icinga always communicates through secured channels.
+* It creates a new API user called `root` - with full permissions. Credentials are stored under `/etc/icinga2/conf.d/api-users.conf`
 
-    - enable the `api` feature
-    - set up certificates
-    - add the API user `root` with an auto-generated password to the configuration file `/etc/icinga2/conf.d/api-users.conf`
+You will need the API user credentials later when setting up the Icinga web interface.
 
 ## Set up MySQL Databases
 
-A MySQL database server is required.
-
-!!! warning 
-    If you use a version of `MySQL < 5.7` or `MariaDB < 10.2`, the following server options must be set:
-
-
-    ```bash
-    innodb_file_format=barracuda
-    innodb_file_per_table=1
-    innodb_large_prefix=1
-    ```
-
+Icinga requires multiple database to store and manage different aspects of the monitoring environment.
 
 ### Create databases
 
-Open mysql with the root user.
+Make sure you have sufficient permissions to create the databases, for example by connecting as `root`:
 
 ```bash
 mysql -u root -p
 ```
 
-DB for **Icinga DB**
-```sql
-mysql>
-    CREATE DATABASE icingadb;
-    CREATE USER 'icingadb'@'localhost' IDENTIFIED BY 'CHANGEME';
-    GRANT ALL ON icingadb.* TO 'icingadb'@'localhost';
-```
-
-
-DB for **Icinga Web**
+Database for **Icinga Web**
 
 ```sql
 mysql>
@@ -82,14 +67,22 @@ mysql>
     GRANT ALL PRIVILEGES ON icingaweb2.* TO 'icingaweb2'@'localhost';
 ```
 
-
-DB for **Director** (only necessary if you want want to use the director)
+Database for **Director** (only necessary if you want want to use the director)
 
 ```sql
 mysql>
     CREATE DATABASE director CHARACTER SET 'utf8';
     CREATE USER director@localhost IDENTIFIED BY 'CHANGEME';
     GRANT ALL ON director.* TO director@localhost;
+```
+
+Database for **Icinga DB**
+
+```sql
+mysql>
+    CREATE DATABASE icingadb;
+    CREATE USER 'icingadb'@'localhost' IDENTIFIED BY 'CHANGEME';
+    GRANT ALL ON icingadb.* TO 'icingadb'@'localhost';
 ```
 
 After creating the database, import the Icinga DB schema using the following command:
@@ -100,7 +93,9 @@ mysql -u root -p icingadb </usr/share/icingadb/schema/mysql/schema.sql
 
 ## Set up Icinga DB
 
-### Run Redis® for Icinga DB
+Icinga DB is respnsible for storing the collected monitoring data. It uses a dedicated Redis® instance for caching.
+
+### Start Redis® for Icinga DB
 
 Start and enable Redis® for Icinga DB.
 
@@ -122,7 +117,7 @@ systemctl enable --now icingadb-redis
 
 ### Enable Icinga DB Feature
 
-Enable the Icinga DB feature and make sure to restart Icinga 2.
+Ensure Icinga 2 sends the collected data to Icinga DB by enabling the `icingadb` feature:
 
 ```bash
 icinga2 feature enable icingadb
@@ -132,49 +127,47 @@ systemctl restart icinga2
 
 ### Start Icinga DB
 
-!!! info 
-
-    Icinga DB installs its configuration file to `/etc/icingadb/config.yml`, pre-populating most of the settings for a local setup. Before running Icinga DB, adjust the Redis® and database credentials and, if necessary, the connection configuration.
-
-Start Icinga DB by executing the following command.
+The Icinga DB configuration is stored under `/etc/icingadb/config.yml`. Make sure to adjust connection settings properly before starting Icinga DB. Start Icinga DB by executing the following command.
 
 ```bash
 systemctl enable --now icingadb
 ```
 
-## Set up Icinga Web 2
+## Set up Icinga Web
 
-Set up Icinga Web 2 to get the web GUI.
+Next, we'll set up Icinga Web, the user-friendly interface for monitoring your infrastructure. Follow these steps to get the web interface up and running, so you can easily visualize and control your Icinga setup.
+
+Depending on your operating systems, additional steps may be required for the web server:
 
 {% include "doc/include/tab-install-icingaweb2.md" %}
 
 ### Prepare Web Setup
 
-You can set up Icinga Web 2 quickly and easily with the Icinga Web 2 setup wizard which is available the first time you visit Icinga Web 2 in your browser. When using the web setup you are required to authenticate using a token. In order to generate a token use the icingacli:
+Icinga Web can be set up easily by using it's built in setup wizard. It will open automatically when you visit Icinga Web for the first time. By creating a setup token upfront, you ensure that you are authorized to to run the setup wizard. You will be asked for the token during the web setup.
+
+To generate a token use the icingacli:
 
 ```bash 
 icingacli setup token create
 ```
 
-In case you do not remember the token you can show it using the icingacli:
+In case the output gets lost, you can display the token on the CLI at any time by running:
 
 ```bash
 icingacli setup token show
 ```
 
-This concludes the installation. Now proceed with the configuration.
-
 ### Start Web Setup
 
-Finally visit Icinga Web 2 in your browser to access the setup wizard and complete the installation: `/icingaweb2/setup`.
+Open your browser and point it to your server's hostname, eg. `http://localhost/icingaweb2`. You will be lead to the setup wizard automatically.
 
 !!! tip
-    Use the same database, user and password details created above when asked.
+    Use the same database name, user and password details created above when asked.
 
-The setup wizard automatically detects the required packages. In case one of them is missing, e.g. a PHP module, please install the package, restart your webserver and reload the setup page.
+The setup wizard automatically detects and validates requirements. If anything is missing, use your package manager to install required packages and restart your web server.
 
 
 !!! Info
-    The API-user and it's password are written in the file `/etc/icinga2/conf.d/api-users.conf`
+    The API user credentials are auto-generated and stored in `/etc/icinga2/conf.d/api-users.conf`
 
-### Continue with <u>**[Setup Wizard](11-websetup.md)**</u>
+### Continue with the **[Setup Wizard](11-websetup.md)**
