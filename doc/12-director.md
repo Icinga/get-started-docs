@@ -6,7 +6,7 @@ Log in to Icinga Web with an admin account and follow the steps below to do the 
 
 ## Configure Icinga Director
 
-Create a new database resource for the Icinga Director database via the `Configuration` > `Application` > `Resources`. The resource defines the connection details for the Director database you created before.
+Create a new database resource for the Icinga Director database via `Configuration` > `Application` > `Resources`. The resource defines the connection details for the Director database you created before.
 
 ![create-new-ressource](img/director/01-create-new-ressource.png)
 
@@ -26,7 +26,7 @@ Icinga Director will ask for an Icinga 2 API user. This can either be the one wh
 
 The API user will be used by Icinga Director to validate and deploy new Icinga configuration items straight to Icinga 2.
 
-Additionally, Icinga Director will import existing Check Command definitions. Those configuration items can later be used to simpmlify the usage of monitoring plugins.
+Additionally, Icinga Director will import existing Check Command definitions. Those configuration items can later be used to simplify the usage of monitoring plugins.
 
 ![config-schema-filled](img/director/05-config-schema.png)
 
@@ -43,9 +43,9 @@ Once you hit the "Deploy" button, the changes will be send to production. A gree
 ![deployed-changes](img/director/08-deployed-changes.png)
 
 ## Monitor your first Host
-When installing Icinga 2 it comes with some default configuration which includes some basics to get started easier. This default configuration includes some basic templates and some standard checks, so your Icinga won’t be completely empty after the first start. Icinga Director does not come with this default configuration. (Besides the command definitions you imported during the initial Director setup.)
+When installing Icinga 2 it comes with some default configuration which includes some basics to get started easier. This default configuration includes some basic templates and some standard checks, so your Icinga won't be completely empty after the first start. Icinga Director does not come with this default configuration. (Besides the command definitions you imported during the initial Director setup.)
 
-This means that you have to do some preparation before you can add your first host with Icinga Director. There’s not much work to do, though. Before adding your first host you need to create a host template.
+This means that you have to do some preparation before you can add your first host with Icinga Director. There's not much work to do, though. Before adding your first host you need to create a host template.
 
 ![host-template](img/director/09-host-template.png)
 
@@ -54,13 +54,13 @@ The host template includes some basic parameters such as:
 * **Check command**: Defines how to check the availability of a host. We use the `hostalive` check command which is the default for Icinga.
 * **Check interval**: Defines the interval in which the check is executed
 * **Retry interval**: Defines the interval in which to retry the check before marking it as a “hard state”
-* **Execute active checks**: Actively execute the checks and don’t wait for check results provided by third party tools or scripts
+* **Execute active checks**: Actively execute the checks and don't wait for check results provided by third party tools or scripts
 * **Accept passive checks**: Ignore check results provided by third party tools or scripts, only the checks executed directly by Icinga 2 are relevant
 * **Send notifications**: Enable notifications for hosts using this template
 
 Finally adding your first Host via Icinga Director is the easiest part, once all requirements are met and a template is available. There are some parameters that you have to fill in such as a host name, address and of course which host template to use.
 
-Once the host template and host are created you are ready for your first deployment! You’ll see the changes you made in the Activity Log. That’s where you can track all changes made in detail. Not only those made by you, but also changes made by your team are visible here.
+Once the host template and host are created you are ready for your first deployment! You'll see the changes you made in the Activity Log. That's where you can track all changes made in detail. Not only those made by you, but also changes made by your team are visible here.
 
 Hitting the “Deploy” button will send your changes to Icinga 2 and they will become available in the host overview. Icinga will start executing the checks in the defined interval and display the results in your web interface.
 
@@ -70,6 +70,6 @@ Hitting the “Deploy” button will send your changes to Icinga 2 and they will
 Adding your first host is only the beginning. You can continue your journey of learning how to master Icinga Director through many different topics. For example, adding new service checks to your hosts is very similar to adding a host. Still, there are plenty of capabilities included in Icinga Director that are worth exploring. Here are some examples to continue reading:
 
 * Learn more about the fundamentals of Icinga Director: [How your configuration gets rendered](https://icinga.com/docs/icinga-director/latest/doc/10-How-it-works/)
-* Use Icinga’s dynamic rule based configuration for service checks: [Working with Apply for rules – tcp ports example](https://icinga.com/docs/icinga-director/latest/doc/15-Service-apply-for-example/)
+* Use Icinga's dynamic rule based configuration for service checks: [Working with Apply for rules – tcp ports example](https://icinga.com/docs/icinga-director/latest/doc/15-Service-apply-for-example/)
 * Use Icinga Director to manage and deploy Icinga Agents on your machines: [Working with Agents and Config Zones](https://icinga.com/docs/icinga-director/latest/doc/24-Working-with-agents/)
 * Automate your process by importing data from third party databases: [Import and Synchronization](https://icinga.com/docs/icinga-director/latest/doc/70-Import-and-Sync/)

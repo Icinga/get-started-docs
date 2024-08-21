@@ -68,7 +68,7 @@
         setsebool -P httpd_can_network_connect 1
         ```
 
-        and and install additional packages to configure SELinux properly:
+        and install additional packages to configure SELinux properly:
 
         ```bash
         dnf install icinga-selinux-common icingaweb2-selinux icinga2-selinux

@@ -143,7 +143,7 @@ Depending on your operating systems, additional steps may be required for the we
 
 ### Prepare Web Setup
 
-Icinga Web can be set up easily by using it's buit in setup wizard. It will open automatically when you visit Icinga Web for the first time. By creating a setup token upfront, you ensure that you are authorized to to run the setup wizard. You will be asked for the token during the web setup.
+Icinga Web can be set up easily by using it's built in setup wizard. It will open automatically when you visit Icinga Web for the first time. By creating a setup token upfront, you ensure that you are authorized to to run the setup wizard. You will be asked for the token during the web setup.
 
 To generate a token use the icingacli:
 
@@ -159,7 +159,7 @@ icingacli setup token show
 
 ### Start Web Setup
 
-Open your browser and point it to your servers hostname, eg. `http://localhost/icingaweb2`. You will be lead to the setup wizard automatically.
+Open your browser and point it to your server's hostname, eg. `http://localhost/icingaweb2`. You will be lead to the setup wizard automatically.
 
 !!! tip
     Use the same database name, user and password details created above when asked.

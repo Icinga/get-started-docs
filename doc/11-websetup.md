@@ -59,7 +59,7 @@ Icinga Web supports multiple authentication backends. To identify the backends, 
 
 #### 4.4 Aministration
 
-Create a administrative account, this will be your initial user to access Icinga Web:
+Create an administrative account, this will be your initial user to access Icinga Web:
 
 ![Create-Admin](img/web/06-create-admin-account.png)
 
@@ -116,7 +116,7 @@ The credentials are verified on the fly. If Icinga Web can access the API, you w
 
 ![Overview](img/web/13-configuration-overview-2.png)
 
-One more final page summarizes if the configuration are all valid and working.
+One more final page summarizes if the configurations are all valid and working.
 
 ![Success-View](img/web/14-success-view.png)
 
