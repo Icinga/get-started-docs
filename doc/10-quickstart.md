@@ -93,7 +93,7 @@ mysql -u root -p icingadb </usr/share/icingadb/schema/mysql/schema.sql
 
 ## Set up Icinga DB
 
-Icinga DB is respnsible for storing the collected monitoring data. It uses a dedicated Redis® instance for caching.
+Icinga DB is respnsible for storing the collected monitoring data. It uses a dedicated Redis®[\*](TRADEMARKS.md#redis) instance for caching.
 
 ### Start Redis® for Icinga DB
 
