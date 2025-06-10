@@ -1,4 +1,4 @@
-# Icinga Director Setup Walktrough
+# Icinga Director Setup Walkthrough
 
 Icinga Director is a powerful module for Icinga Web that simplifies the configuration and management of your monitoring setup. It provides a user-friendly interface for defining hosts, services, and other monitoring objects, allowing you to automate and manage complex configurations with ease. Icinga Director integrates with various data sources, making it easier to keep your monitoring in sync with your infrastructure.
 
@@ -8,7 +8,7 @@ Log in to Icinga Web with an admin account and follow the steps below to do the 
 
 Create a new database resource for the Icinga Director database via `Configuration` > `Application` > `Resources`. The resource defines the connection details for the Director database you created before.
 
-![create-new-ressource](img/director/01-create-new-ressource.png)
+![create-new-resource](img/director/01-create-new-ressource.png)
 
 Fill the fields with the credentials of the director database user and continue. Make sure to set the Character Set to `utf8`.
 
@@ -18,7 +18,7 @@ Back in the Director menu, you will be asked to select a database resource. Pick
 
 ![refreshed-view](img/director/03-refreshed-view.png)
 
-Next, the databse schema will be imported.
+Next, the database schema will be imported.
 
 ![config-schema](img/director/04-create-schema.png)
 
@@ -30,7 +30,7 @@ Additionally, Icinga Director will import existing Check Command definitions. Th
 
 ![config-schema-filled](img/director/05-config-schema.png)
 
-Once the import has finished successfully, you will see the actual starting page of Icinga Director. You may notice that there are a couple of pending items in the Activity Log.
+Once the import has finished successfully, you will see the actual starting page of Icinga Director. You may notice that there are a couple of pending changes in the Activity Log.
 
 ![director-view](img/director/06-director-view.png)
 
@@ -38,12 +38,12 @@ The Activity Log tracks each configuration change made to Icinga. It provides tr
 
 ![activity-log](img/director/07-activity-log.png)
 
-Once you hit the "Deploy" button, the changes will be send to production. A green checkmark indicates a successfull deployment.
+Once you hit the "Deploy" button, the changes will be send to production. A green checkmark indicates a successful deployment.
 
 ![deployed-changes](img/director/08-deployed-changes.png)
 
 ## Monitor your first Host
-When installing Icinga 2 it comes with some default configuration which includes some basics to get started easier. This default configuration includes some basic templates and some standard checks, so your Icinga won't be completely empty after the first start. Icinga Director does not come with this default configuration. (Besides the command definitions you imported during the initial Director setup.)
+When installing Icinga 2 it comes with some default configuration which includes some basics to get started more easily. This default configuration includes some basic templates and some standard checks, so your Icinga won't be completely empty after the first start. Icinga Director does not come with this default configuration. (Besides the command definitions you imported during the initial Director setup.)
 
 This means that you have to do some preparation before you can add your first host with Icinga Director. There's not much work to do, though. Before adding your first host you need to create a host template.
 

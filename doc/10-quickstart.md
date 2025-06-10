@@ -48,7 +48,7 @@ You will need the API user credentials later when setting up the Icinga web inte
 
 ## Set up MySQL Databases
 
-Icinga requires multiple database to store and manage different aspects of the monitoring environment.
+Icinga requires multiple databases to store and manage different aspects of the monitoring environment.
 
 ### Create databases
 
@@ -93,7 +93,7 @@ mysql -u root -p icingadb </usr/share/icingadb/schema/mysql/schema.sql
 
 ## Set up Icinga DB
 
-Icinga DB is respnsible for storing the collected monitoring data. It uses a dedicated Redis®[\*](TRADEMARKS.md#redis) instance for caching.
+Icinga DB is responsible for storing the collected monitoring data. It uses a dedicated Redis®[\*](TRADEMARKS.md#redis) instance for caching.
 
 ### Start Redis® for Icinga DB
 
@@ -105,7 +105,7 @@ systemctl enable --now icingadb-redis
 
 !!! Warning
 
-    If  the following error occurs: 
+    If the following error occurs: 
     *"Failed to enable unit: Refusing to operate on alias name or linked unit file: icingadb-redis.service"*
     Check the service's status with: 
     
@@ -143,7 +143,7 @@ Depending on your operating systems, additional steps may be required for the we
 
 ### Prepare Web Setup
 
-Icinga Web can be set up easily by using it's built in setup wizard. It will open automatically when you visit Icinga Web for the first time. By creating a setup token upfront, you ensure that you are authorized to to run the setup wizard. You will be asked for the token during the web setup.
+Icinga Web can be set up easily by using its built-in setup wizard. It will open automatically when you visit Icinga Web for the first time. By creating a setup token upfront, you ensure that you are authorized to to run the setup wizard. You will be asked for the token during the web setup.
 
 To generate a token use the icingacli:
 
@@ -159,7 +159,7 @@ icingacli setup token show
 
 ### Start Web Setup
 
-Open your browser and point it to your server's hostname, eg. `http://localhost/icingaweb2`. You will be lead to the setup wizard automatically.
+Open your browser and point it to your server's hostname, e.g. `http://localhost/icingaweb2`. You will be lead to the setup wizard automatically.
 
 !!! tip
     Use the same database name, user and password details created above when asked.
