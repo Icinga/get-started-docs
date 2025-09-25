@@ -7,7 +7,7 @@ This guide will walk you through the initial setup of Icinga Web.
 
 The first page will ask you for the setup token that you created before. This way, only authorized persons can use the setup wizard. Get the token with `icingacli setup token show`.
 
-Add the web server user (`www-data` in case of Apache) to the `icingaweb2`-group to allow the web server to access Icinga Web configuration files:
+Add the web server user (`www-data` in case of Apache on Debian and derivatives, `apache` on RHEL-like systems) to the `icingaweb2`-group to allow the web server to access Icinga Web configuration files:
 
 
 ```bash
@@ -49,7 +49,7 @@ The setup wizard will now ask you for the details of the Icinga Web database whi
 - Username: 'icingaweb2'
 - Password: *YOUR PASSWORD*
 
-![Database-Ressource-Icinga-Web](img/web/04-icinga-web-database.png)
+![Database-Resource-Icinga-Web](img/web/04-icinga-web-database.png)
 
 #### 4.3 Authentication Backend
 
@@ -57,7 +57,7 @@ Icinga Web supports multiple authentication backends. To identify the backends, 
 
 ![Authentication-Backend](img/web/05-authentication-backend.png)
 
-#### 4.4 Aministration
+#### 4.4 Administration
 
 Create an administrative account, this will be your initial user to access Icinga Web:
 
@@ -65,19 +65,19 @@ Create an administrative account, this will be your initial user to access Icing
 
 #### 4.5 Application Configuration
 
-Mutliple configuration parameters are available to adjust the behaviour of logging, debugging and other things. The defaults are just right as for now.
+Multiple configuration parameters are available to adjust the behaviour of logging, debugging and other things. The defaults are just right for now.
 
 ![Application-Configuration](img/web/07-application-configuration.png)
 
 #### 4.6 Check Configurations
 
-The final page summarizes one more time all the configuration which were made.
+The final page summarizes one more time all the configuration which was made.
 
 ![Overview](img/web/08-configurration-overview.png)
 
 ### 5. Configuration of Icinga DB Web
 
-Next, we configure the Icinga DB Web module. It is resposible for visualizing data that is stored in Icinga DB.
+Next, we configure the Icinga DB Web module. It is responsible for visualizing data that is stored in Icinga DB.
 
 ![Icinga-DB-Web-Configuration](img/web/09-icinga-db-web-configuration.png)
 
@@ -101,7 +101,7 @@ Since Redis® is running on the same node as Icinga Web, we're setting `localhos
 
 #### 5.3 Icinga 2 API
 
-The credentials of the API-user are stored in `/etc/icinga2/conf.d/api-users.conf`.
+The credentials of the API user are stored in `/etc/icinga2/conf.d/api-users.conf`.
 
 - Host: 'localhost'
 - Port: '5665'
