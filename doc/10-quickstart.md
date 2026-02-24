@@ -63,7 +63,7 @@ mysql -u root -p
 Database for **Icinga Web**
 
 ```sql
-mysql>
+# mysql>
     CREATE DATABASE icingaweb2;
     CREATE USER 'icingaweb2'@'localhost' IDENTIFIED BY 'CHANGEME';
     GRANT ALL PRIVILEGES ON icingaweb2.* TO 'icingaweb2'@'localhost';
@@ -72,7 +72,7 @@ mysql>
 Database for **Director** (only necessary if you want want to use the director)
 
 ```sql
-mysql>
+# mysql>
     CREATE DATABASE director CHARACTER SET 'utf8';
     CREATE USER director@localhost IDENTIFIED BY 'CHANGEME';
     GRANT ALL ON director.* TO director@localhost;
@@ -81,7 +81,7 @@ mysql>
 Database for **Icinga DB**
 
 ```sql
-mysql>
+# mysql>
     CREATE DATABASE icingadb;
     CREATE USER 'icingadb'@'localhost' IDENTIFIED BY 'CHANGEME';
     GRANT ALL ON icingadb.* TO 'icingadb'@'localhost';
