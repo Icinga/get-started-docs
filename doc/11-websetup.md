@@ -101,12 +101,31 @@ Since Redis® is running on the same node as Icinga Web, we're setting `localhos
 
 #### 5.3 Icinga 2 API
 
-The credentials of the API user are stored in `/etc/icinga2/conf.d/api-users.conf`.
+Because the `root` API user has too many permissions, we create a separate API user for Icinga DB. Add the following entry to `/etc/icinga2/conf.d/api-users.conf`:
+
+!!! note
+
+    Make sure to adjust the password.
+
+```
+object ApiUser "icingadb-web" {
+    password = "CHANGEME"
+    permissions = [ "actions/*", "objects/modify/*", "objects/query/*", "status/query" ]
+}
+```
+
+To apply the changes restart the Icinga 2 service.
+
+```bash
+systemctl restart icinga2.service
+```
+
+Then set the API user credentials in the wizard:
 
 - Host: 'localhost'
 - Port: '5665'
-- API Username: 'root'
-- API Password: *PASSWORD FROM FILE*
+- API Username: 'icingadb-web'
+- API Password: *YOUR PASSWORD*
 
 ![Icinga-API-Configuration](img/web/12-icinga-api-configuration.png)
 

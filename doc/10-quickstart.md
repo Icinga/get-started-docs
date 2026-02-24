@@ -44,7 +44,9 @@ The API setup wizard will guide you through the following steps:
 * It generates a Certification Authority (CA) and initial certificates, since Icinga always communicates through secured channels.
 * It creates a new API user called `root` - with full permissions. Credentials are stored under `/etc/icinga2/conf.d/api-users.conf`
 
-You will need the API user credentials later when setting up the Icinga web interface.
+!!! info
+
+    Because the `root` API user has full permissions, we will later create a new one for Icinga DB Web with fewer permissions when setting up the Icinga Web interface.
 
 ## Set up MySQL Databases
 
