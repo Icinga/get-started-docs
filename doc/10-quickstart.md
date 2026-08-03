@@ -11,13 +11,9 @@ Icinga consists of multiple components, each responsible for different aspects o
 - Icinga Web
 - Icinga DB Web
 - Icinga Director
-
-### Requirements
-
-A database is required to store the monitoring data collected by Icinga. For this guide, MySQL ≥ 8.0 or MariaDB ≥ 10.2.2 is required.
+- MariaDB as a MySQL-compatible database
 
 The commands listed below should be run with root permissions unless specified otherwise.
-
 
 ## Add Repository
 
