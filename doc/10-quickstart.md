@@ -168,8 +168,4 @@ Open your browser and point it to your server's hostname, e.g. `http://localhost
 
 The setup wizard automatically detects and validates requirements. If anything is missing, use your package manager to install required packages and restart your web server.
 
-
-!!! Info
-    The API user credentials are auto-generated and stored in `/etc/icinga2/conf.d/api-users.conf`
-
 ### Continue with the **[Setup Wizard](11-websetup.md)**

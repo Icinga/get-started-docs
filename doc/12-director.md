@@ -73,3 +73,5 @@ Adding your first host is only the beginning. You can continue your journey of l
 * Use Icinga's dynamic rule based configuration for service checks: [Working with Apply for rules – tcp ports example](https://icinga.com/docs/icinga-director/latest/doc/15-Service-apply-for-example/)
 * Use Icinga Director to manage and deploy Icinga Agents on your machines: [Working with Agents and Config Zones](https://icinga.com/docs/icinga-director/latest/doc/24-Working-with-agents/)
 * Automate your process by importing data from third-party databases: [Import and Synchronization](https://icinga.com/docs/icinga-director/latest/doc/70-Import-and-Sync/)
+
+### Continue with the **[Follow-Ups](13-follow-up.md)**

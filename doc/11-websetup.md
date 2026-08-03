@@ -7,13 +7,9 @@ This guide will walk you through the initial setup of Icinga Web.
 
 The first page will ask you for the setup token that you created before. This way, only authorized persons can use the setup wizard. Get the token with `icingacli setup token show`.
 
-Add the web server user (`www-data` in case of Apache on Debian and derivatives, `apache` on RHEL-like systems) to the `icingaweb2`-group to allow the web server to access Icinga Web configuration files:
+Add your web server's user to the `icingaweb2` group to allow the web server to access Icinga Web configuration files, then restart the web server:
 
-
-```bash
-usermod -a -G icingaweb2 www-data
-systemctl restart apache2
-```
+{% include "doc/include/tab-webserver-group.md" %}
 
 ![Welcome](img/web/00-welcome-to-webconfiguration.png)
 
@@ -142,3 +138,5 @@ One more final page summarizes if the configurations are all valid and working.
 Log in to Icinga Web with your administration account.
 
 ![Login-Filled](img/web/15-admin-login.png)
+
+### Continue with the **[Director Setup](12-director.md)**
