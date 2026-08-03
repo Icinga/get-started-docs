@@ -9,7 +9,7 @@
         icingadb-web \
         icingaweb2 \
         icinga-director \
-        monitoring-plugins 
+        monitoring-plugins
     ```
 
 === "Debian"
@@ -37,7 +37,7 @@
         icingadb-web \
         icingaweb2 \
         icinga-director
-        
+
     zypper install --recommends monitoring-plugins-all
     ```
 

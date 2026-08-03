@@ -1,6 +1,6 @@
 === "Ubuntu"
 
-    ```bash 
+    ```bash
     apt install libapache2-mod-php
     ```
 
@@ -8,7 +8,7 @@
 
 === "Debian"
 
-    On Debian there is no additional step necessary. 
+    On Debian there is no additional step necessary.
 
 === "SLES"
 
