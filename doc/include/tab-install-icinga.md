@@ -9,9 +9,11 @@
         icingadb-web \
         icingaweb2 \
         icinga-director \
+        mariadb-server \
         monitoring-plugins
 
     systemctl enable --now icinga2
+    systemctl enable --now mariadb
     ```
 
 === "Debian"
@@ -25,9 +27,11 @@
         icingadb-web \
         icingaweb2 \
         icinga-director \
+        mariadb-server \
         monitoring-plugins
 
     systemctl enable --now icinga2
+    systemctl enable --now mariadb
     ```
 
 === "SLES"
@@ -40,11 +44,13 @@
         icingadb-redis \
         icingadb-web \
         icingaweb2 \
-        icinga-director
+        icinga-director \
+        mariadb
 
     zypper install --recommends monitoring-plugins-all
 
     systemctl enable --now icinga2
+    systemctl enable --now mariadb
     ```
 
 === "RHEL"
@@ -60,9 +66,11 @@
         icingadb-web \
         icingaweb2 \
         icinga-director \
+        maraidb-server \
         nagios-plugins-all
 
     systemctl enable --now icinga2
+    systemctl enable --now mariadb
     ```
 
 
