@@ -38,7 +38,7 @@ The Activity Log tracks each configuration change made to Icinga. It provides tr
 
 ![activity-log](img/director/07-activity-log.png)
 
-Once you hit the "Deploy" button, the changes will be send to production. A green checkmark indicates a successful deployment.
+Once you hit the "Deploy" button, the changes will be sent to production. A green checkmark indicates a successful deployment.
 
 ![deployed-changes](img/director/08-deployed-changes.png)
 
@@ -54,8 +54,8 @@ The host template includes some basic parameters such as:
 * **Check command**: Defines how to check the availability of a host. We use the `hostalive` check command which is the default for Icinga.
 * **Check interval**: Defines the interval in which the check is executed
 * **Retry interval**: Defines the interval in which to retry the check before marking it as a “hard state”
-* **Execute active checks**: Actively execute the checks and don't wait for check results provided by third party tools or scripts
-* **Accept passive checks**: Ignore check results provided by third party tools or scripts, only the checks executed directly by Icinga 2 are relevant
+* **Execute active checks**: Actively execute the checks and don't wait for check results provided by third-party tools or scripts
+* **Accept passive checks**: Ignore check results provided by third-party tools or scripts, only the checks executed directly by Icinga 2 are relevant
 * **Send notifications**: Enable notifications for hosts using this template
 
 Finally adding your first Host via Icinga Director is the easiest part, once all requirements are met and a template is available. There are some parameters that you have to fill in such as a host name, address and of course which host template to use.
@@ -72,4 +72,6 @@ Adding your first host is only the beginning. You can continue your journey of l
 * Learn more about the fundamentals of Icinga Director: [How your configuration gets rendered](https://icinga.com/docs/icinga-director/latest/doc/10-How-it-works/)
 * Use Icinga's dynamic rule based configuration for service checks: [Working with Apply for rules – tcp ports example](https://icinga.com/docs/icinga-director/latest/doc/15-Service-apply-for-example/)
 * Use Icinga Director to manage and deploy Icinga Agents on your machines: [Working with Agents and Config Zones](https://icinga.com/docs/icinga-director/latest/doc/24-Working-with-agents/)
-* Automate your process by importing data from third party databases: [Import and Synchronization](https://icinga.com/docs/icinga-director/latest/doc/70-Import-and-Sync/)
+* Automate your process by importing data from third-party databases: [Import and Synchronization](https://icinga.com/docs/icinga-director/latest/doc/70-Import-and-Sync/)
+
+### Continue with the **[Follow-Ups](13-follow-up.md)**

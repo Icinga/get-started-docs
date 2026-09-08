@@ -9,7 +9,9 @@
         icingadb-web \
         icingaweb2 \
         icinga-director \
-        monitoring-plugins 
+        monitoring-plugins
+
+    systemctl enable --now icinga2
     ```
 
 === "Debian"
@@ -24,6 +26,8 @@
         icingaweb2 \
         icinga-director \
         monitoring-plugins
+
+    systemctl enable --now icinga2
     ```
 
 === "SLES"
@@ -37,8 +41,10 @@
         icingadb-web \
         icingaweb2 \
         icinga-director
-        
+
     zypper install --recommends monitoring-plugins-all
+
+    systemctl enable --now icinga2
     ```
 
 === "RHEL"
